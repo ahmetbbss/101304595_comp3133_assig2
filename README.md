@@ -1,5 +1,7 @@
 # 101304595Comp3133Assig2
 
+#Deployet at : https://101304595-comp3133-assig2.vercel.app/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
 ## Development server
