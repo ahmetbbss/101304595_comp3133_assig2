@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Create Employee</h2>
+  <form (ngSubmit)="handleSubmit()" #employeeForm="ngForm">
+    <div class="form-group">
+      <label for="first_name">First Name:</label>
+      <input type="text" class="form-control" id="first_name" name="first_name" [(ngModel)]="employeeData.first_name" required>
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name:</label>
+      <input type="text" class="form-control" id="last_name" name="last_name" [(ngModel)]="employeeData.last_name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="employeeData.email" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select class="form-control" id="gender" name="gender" [(ngModel)]="employeeData.gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input type="number" class="form-control" id="salary" name="salary" [(ngModel)]="employeeData.salary" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">Create Employee</button>
+  </form>
+</div>

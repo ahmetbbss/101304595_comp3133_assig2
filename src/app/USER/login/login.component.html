@@ -1,0 +1,92 @@
+<div class="container mx-auto mt-20 m-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <div
+        class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 p-5"
+      >
+        <h2 class="text-center text-3xl font-extrabold text-gray-900 mb-6">
+          Sign In
+        </h2>
+        <form (submit)="onLogin()" class="space-y-6">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input
+              type="text"
+              id="username"
+              [(ngModel)]="user.username"
+              name="username"
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              [(ngModel)]="user.email"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3 position-relative">
+            <label for="password" class="form-label">Password</label>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              name="password"
+              id="password"
+              [(ngModel)]="user.password"
+              class="form-control"
+              minlength="8"
+              required
+            />
+            <div class="position-absolute top-50 end-0 translate-middle-y">
+              <svg
+
+                class="h-6 w-6 text-gray-700 cursor-pointer"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <ng-container *ngIf="showPassword; else LockClosed">
+                  <!-- Eye Open Icon -->
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.522 5 12 5s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S3.732 16.057 2.458 12z"
+                  />
+                </ng-container>
+                <ng-template #LockClosed>
+                  <!-- Lock Closed Icon -->
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 116 0z"
+                  />
+                </ng-template>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary w-100">Sign in</button>
+          </div>
+        </form>
+      </div>
+      <div class="bg-gray-50 text-center p-4 mt-3">
+        <p class="text-sm text-gray-500">
+          Don't have an account yet?
+          <a href="/signup" class="text-indigo-600">Sign Up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div *ngIf="employee" class="employee-details card bg-light">
+  <div class="card-body">
+    <h2 class="card-title text-primary">Employee Details</h2>
+    <p class="card-text">
+      <strong class="text-info">ID:</strong> {{ employee.id }}
+    </p>
+    <p class="card-text">
+      <strong class="text-info">First Name:</strong> {{ employee.first_name }}
+    </p>
+    <p class="card-text">
+      <strong class="text-info">Last Name:</strong> {{ employee.last_name }}
+    </p>
+    <p class="card-text">
+      <strong class="text-info">Email:</strong> {{ employee.email }}
+    </p>
+    <p class="card-text">
+      <strong class="text-info">Gender:</strong> {{ employee.gender }}
+    </p>
+    <p class="card-text">
+      <strong class="text-info">Salary:</strong> {{ employee.salary }}
+    </p>
+  </div>
+</div>
+
+<div *ngIf="!employee" class="no-employee card bg-danger text-white">
+  <div class="card-body">
+    <p class="card-text">No employee found</p>
+  </div>
+</div>
